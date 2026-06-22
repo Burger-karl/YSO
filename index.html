@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yemi Segun Ogundipe & Co | Chartered Accountants</title>
+  <meta name="description" content="Yemi Segun Ogundipe & Co – a reputable indigenous firm of Chartered Accountants offering audit, tax, advisory, and management consulting services in Nigeria." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            forest: {
+              50:  '#f2f7f2',
+              100: '#deeede',
+              200: '#b8d9b8',
+              500: '#3a7d44',
+              600: '#2e6535',
+              700: '#234e28',
+              800: '#183719',
+              900: '#0e210f',
+            },
+            gold: {
+              300: '#e8c97a',
+              400: '#d4a843',
+              500: '#b8891e',
+              600: '#9a6f12',
+            },
+            ink: '#1a1a18',
+            cream: '#faf9f6',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Favicon: SVG data URI — works in all modern browsers -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232e6535'/%3E%3Crect x='36' y='36' width='28' height='28' rx='10' fill='%23d4a843' opacity='0.35'/%3E%3Ctext x='7' y='46' font-family='Georgia%2C serif' font-style='italic' font-weight='700' font-size='30' fill='white' letter-spacing='-1'%3EYSO%3C/text%3E%3C/svg%3E">
+  <!-- Fallback PNG favicon for older browsers -->
+  <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232e6535'/%3E%3Ctext x='7' y='46' font-family='Georgia%2C serif' font-style='italic' font-weight='700' font-size='30' fill='white'%3EYSO%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --forest: #2e6535;
+      --gold: #d4a843;
+      --ink: #1a1a18;
+      --cream: #faf9f6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); }
+
+    /* ── Logo ── */
+    .yso-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .yso-mark {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      background: var(--forest);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .yso-mark::before {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 28px; height: 28px;
+      background: var(--gold);
+      border-radius: 8px 0 8px 0;
+      opacity: 0.35;
+    }
+    .yso-mark-text {
+      position: relative;
+      z-index: 1;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 19px;
+      color: #fff;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      user-select: none;
+    }
+    .yso-mark-lg .yso-mark-text { font-size: 24px; }
+    .yso-wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .yso-wordmark-top { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--forest); letter-spacing: 0.01em; }
+    .yso-wordmark-sub { font-family: 'Inter', system-ui, sans-serif; font-size: 10px; font-weight: 500; color: #6b7280; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 3px; }
+
+    /* Logo on dark bg */
+    .yso-logo-light .yso-wordmark-top { color: #fff; }
+    .yso-logo-light .yso-wordmark-sub  { color: rgba(255,255,255,0.55); }
+
+    /* ── Nav ── */
+    #nav { transition: background 0.3s, box-shadow 0.3s; }
+    #nav.scrolled { background: rgba(250,249,246,0.97); box-shadow: 0 1px 24px rgba(0,0,0,0.07); }
+
+    /* ── Hero ── */
+    .hero-bg {
+      background:
+        linear-gradient(to bottom right, rgba(14,33,15,0.92) 0%, rgba(46,101,53,0.85) 60%, rgba(46,101,53,0.7) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='%23234e28'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%232e6535' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E");
+      background-size: cover;
+    }
+
+    /* ── Gold rule ── */
+    .gold-rule { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; }
+
+    /* ── Service card ── */
+    .service-card {
+      background: #fff;
+      border: 1px solid #e8e6e1;
+      border-radius: 12px;
+      padding: 32px;
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--gold);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.09); transform: translateY(-3px); border-color: #d4a843; }
+    .service-card:hover::before { transform: scaleY(1); }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      background: #f2f7f2;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    /* ── Stat ── */
+    .stat-card {
+      text-align: center;
+      padding: 40px 24px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .stat-card:last-child { border-right: none; }
+
+    /* ── Divider ── */
+    .section-divider { height: 1px; background: linear-gradient(to right, transparent, #d4d0c8, transparent); margin: 0 auto; max-width: 240px; }
+
+    /* ── Timeline ── */
+    .method-step { position: relative; padding-left: 60px; padding-bottom: 40px; }
+    .method-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 22px; top: 44px;
+      width: 2px; height: calc(100% - 8px);
+      background: #e8e6e1;
+    }
+    .step-num {
+      position: absolute;
+      left: 0; top: 0;
+      width: 44px; height: 44px;
+      background: var(--forest);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── Partners ── */
+    .partner-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; border: 1px solid #e8e6e1;
+      border-radius: 10px; padding: 14px 24px;
+      font-weight: 500; font-size: 14px;
+      transition: box-shadow 0.2s;
+    }
+    .partner-badge:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+    /* ── Form ── */
+    .form-input {
+      width: 100%;
+      border: 1px solid #d4d0c8;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(46,101,53,0.1); }
+    .form-label { display: block; font-size: 13px; font-weight: 500; color: #4b5563; margin-bottom: 6px; }
+
+    /* ── CTA btn ── */
+    .btn-primary {
+      display: inline-block;
+      background: var(--forest);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: #234e28; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.6);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+    /* ── Smooth fade-in ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up, .service-card, .service-card::before { animation: none !important; transition: none !important; }
+    }
+
+    /* Mobile nav */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#home" class="yso-logo">
+      <div class="yso-mark">
+        <span class="yso-mark-text">YSO</span>
+      </div>
+      <div class="yso-wordmark">
+        <span class="yso-wordmark-top">Yemi Segun Ogundipe</span>
+        <span class="yso-wordmark-sub">Chartered Accountants</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#about"    class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">About</a>
+      <a href="#services" class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">Services</a>
+      <a href="#partner"  class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">Partner Firm</a>
+      <a href="#contact"  class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">Contact</a>
+      <a href="#contact" class="btn-primary" style="padding: 10px 22px; font-size: 14px;">Get in Touch</a>
+    </div>
+
+    <!-- Mobile burger -->
+    <button id="burger" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="2" y1="6" x2="20" y2="6"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="16" x2="20" y2="16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 mt-4 rounded-xl shadow-lg">
+    <div class="flex flex-col p-4 gap-1">
+      <a href="#about"    onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">About</a>
+      <a href="#services" onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Services</a>
+      <a href="#partner"  onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Partner Firm</a>
+      <a href="#contact"  onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+  <!-- Decorative circle -->
+  <div class="absolute top-24 right-12 w-72 h-72 rounded-full opacity-5" style="background: #d4a843;"></div>
+  <div class="absolute bottom-12 left-8 w-44 h-44 rounded-full opacity-5" style="background: #d4a843;"></div>
+
+  <div class="max-w-6xl mx-auto px-6 py-32 w-full">
+    <div class="max-w-3xl">
+      <!-- Logo (hero version) -->
+      <div class="yso-logo yso-logo-light mb-10 fade-up">
+        <div class="yso-mark yso-mark-lg" style="width:64px;height:64px;">
+          <span class="yso-mark-text">YSO</span>
+        </div>
+        <div class="yso-wordmark">
+          <span class="yso-wordmark-top" style="font-size:22px;">Yemi Segun Ogundipe & Co</span>
+          <span class="yso-wordmark-sub" style="font-size:11px; margin-top:5px;">Chartered Accountants · Est. Nigeria</span>
+        </div>
+      </div>
+
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-display text-white leading-tight mb-6 fade-up delay-1">
+        Integrity.<br/>
+        <span style="color: #d4a843;">Expertise.</span><br/>
+        Results.
+      </h1>
+      <p class="text-lg md:text-xl text-white/75 leading-relaxed mb-10 max-w-xl fade-up delay-2">
+        A reputable indigenous firm of Chartered Accountants delivering statutory audit, taxation, and management consulting services across Nigeria — powered by over 40 years of practice excellence.
+      </p>
+      <div class="flex flex-wrap gap-4 fade-up delay-3">
+        <a href="#services" class="btn-primary">Explore Our Services</a>
+        <a href="#contact"  class="btn-outline">Contact the Firm</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+    <span class="text-white text-xs tracking-widest uppercase">Scroll</span>
+    <div style="width:1px;height:36px;background:rgba(255,255,255,0.4);animation:fadeUp 1.5s ease-in-out infinite alternate;"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     STATS BAND
+════════════════════════════════════════ -->
+<section style="background: var(--forest);">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4">
+      <div class="stat-card">
+        <p class="text-4xl font-display text-white font-bold">40+</p>
+        <p class="text-sm text-white/60 mt-2 uppercase tracking-wider">Years Experience</p>
+      </div>
+      <div class="stat-card">
+        <p class="text-4xl font-display text-white font-bold">6+</p>
+        <p class="text-sm text-white/60 mt-2 uppercase tracking-wider">Staff Members</p>
+      </div>
+      <div class="stat-card">
+        <p class="text-4xl font-display" style="color:#d4a843; font-weight:700;">PwC</p>
+        <p class="text-sm text-white/60 mt-2 uppercase tracking-wider">Alumni Heritage</p>
+      </div>
+      <div class="stat-card">
+        <p class="text-4xl font-display text-white font-bold">NG</p>
+        <p class="text-sm text-white/60 mt-2 uppercase tracking-wider">CAMA Registered</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     MISSION & VISION
+════════════════════════════════════════ -->
+<section id="about" class="py-24 px-6" style="background:#fff;">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <!-- Mission -->
+      <div>
+        <div class="gold-rule mb-6"></div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Our Mission</p>
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-gray-900 leading-tight mb-6">
+          Excellence with integrity, every engagement.
+        </h2>
+        <p class="text-gray-600 leading-relaxed text-base">
+          To be a reputable indigenous firm of Chartered Accountants offering excellent service with integrity — motivating staff to support the firm with passion by adding measurable value to client businesses using cutting-edge technology.
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div style="background:#f2f7f2; border-radius:16px; padding:36px;">
+        <div class="gold-rule mb-6"></div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Our Vision</p>
+        <h2 class="text-3xl md:text-4xl font-display font-semibold leading-tight mb-6" style="color: var(--forest);">
+          Nigeria's referral practice of choice.
+        </h2>
+        <p class="text-gray-600 leading-relaxed text-base">
+          To be the referral practice firm in the Nigerian professional accountancy business — distinguished by our commitment to innovative technology and the highest professional standards.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-divider my-20"></div>
+
+    <!-- Firm Profile -->
+    <div class="grid md:grid-cols-5 gap-12 items-center">
+      <div class="md:col-span-3">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Firm Profile</p>
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-gray-900 leading-snug mb-6">
+          Decades of practice.<br/>A foundation you can trust.
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          Yemi Segun Ogundipe & Co (Chartered Accountants) is a firm of Chartered Accountants registered in Nigeria by the Company Registry at Abuja, Federal Capital Territory, authorised to carry on the business of statutory audit, tax, and management advisory services.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          As a medium-scale indigenous firm, we bring the personal attention of a boutique practice with the rigour and methodology of a Big Four heritage. Our Managing Partner, Mr Yemi Ogundipe, is an alumnus of Coopers & Lybrand (now PricewaterhouseCoopers) with over 40 years of practice experience in accountancy, taxation, consulting, and IT.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          We are presently pursuing strategic alliances with similar firms to broaden our service offering and build a sustainable practice for the future — while remaining deeply rooted in our Nigerian identity.
+        </p>
+      </div>
+
+      <!-- Managing partner card -->
+      <div class="md:col-span-2">
+        <div class="service-card">
+          <div style="width:72px;height:72px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <span class="font-display text-white text-2xl font-bold">YO</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-gray-900 mb-1">Mr. Yemi Segun Ogundipe</h3>
+          <p class="text-sm font-medium mb-1" style="color: var(--forest);">Managing Partner</p>
+          <p class="text-sm text-gray-400 mb-4">B.Sc (Hons) Economics · FCA</p>
+          <div class="section-divider" style="max-width:100%;margin:0 0 16px;background:linear-gradient(to right, #e8e6e1, transparent);"></div>
+          <ul class="space-y-2">
+            <li class="text-sm text-gray-600 flex items-start gap-2">
+              <svg class="mt-0.5 flex-shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#d4a843"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Coopers & Lybrand (PwC) alumnus
+            </li>
+            <li class="text-sm text-gray-600 flex items-start gap-2">
+              <svg class="mt-0.5 flex-shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#d4a843"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              40+ years Nigeria practice experience
+            </li>
+            <li class="text-sm text-gray-600 flex items-start gap-2">
+              <svg class="mt-0.5 flex-shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#d4a843"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Corporate Governance pioneer in Nigeria
+            </li>
+            <li class="text-sm text-gray-600 flex items-start gap-2">
+              <svg class="mt-0.5 flex-shrink-0" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#d4a843"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Specialist in IT, tax, and audit practice
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════ -->
+<section id="services" class="py-24 px-6" style="background: var(--cream);">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="gold-rule mx-auto mb-6"></div>
+      <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">What We Do</p>
+      <h2 class="text-4xl md:text-5xl font-display font-semibold text-gray-900 leading-tight">
+        Our Services
+      </h2>
+      <p class="text-gray-500 mt-4 max-w-xl mx-auto">
+        A comprehensive suite of professional services delivered with the rigour, discretion, and technology-backed methodology that modern Nigerian businesses demand.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Statutory Audit -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Statutory Audit</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Independent audit services for public and private sector clients, executed with meticulous documentation and professional scepticism — giving stakeholders the assurance they need.
+        </p>
+      </div>
+
+      <!-- Tax Compliance -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Tax Compliance Audit</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Comprehensive tax compliance reviews, advisory, and filing services designed to protect your business from exposure and optimise your tax position within Nigerian law.
+        </p>
+      </div>
+
+      <!-- Revenue Monitoring -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Revenue Monitoring</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Ongoing revenue assurance and monitoring engagements that identify leakages, verify completeness, and provide actionable intelligence to management and boards.
+        </p>
+      </div>
+
+      <!-- Forensic Investigation -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M8 11h6M11 8v6"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Forensic Investigation</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Special investigations, including forensic audit, fraud examination, and litigation support — conducted with objectivity, confidentiality, and evidentiary rigour.
+        </p>
+      </div>
+
+      <!-- Management Consulting -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Management Consulting</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Strategic and operational consulting services that help organisations build resilience, improve governance, and execute their business plans with greater confidence.
+        </p>
+      </div>
+
+      <!-- Staff Outsourcing -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Staff Outsourcing & Recruitment</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Head-hunting and outsourcing of high-skilled finance, IT, and accounting professionals — placing the right talent domestically and internationally, at short notice.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     WORK METHODOLOGY
+════════════════════════════════════════ -->
+<section class="py-24 px-6" style="background:#fff;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+
+      <div>
+        <div class="gold-rule mb-6"></div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">How We Work</p>
+        <h2 class="text-4xl font-display font-semibold text-gray-900 leading-snug mb-6">
+          A methodology built on<br/>governance and trust.
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          The firm operates with standard questionnaires and full documentation of policies and procedures. Every engagement is governed by a formal confidentiality agreement and engagement letter, ensuring clarity and protecting your interests from day one.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Corporate governance is not an afterthought for us — it is embedded in how we run our own practice. Mr Yemi Ogundipe was part of the consortium that brought Professor Konner (a director of 20 Fortune 500 companies and PKF partner) to Nigeria in 2003 for a landmark Corporate Governance seminar at the Muson Centre.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Our own financials are independently audited year on year by a reputable firm — because we hold ourselves to the same standards we set for our clients.
+        </p>
+      </div>
+
+      <!-- Method steps -->
+      <div class="pt-4">
+        <div class="method-step">
+          <div class="step-num">1</div>
+          <h4 class="font-semibold text-gray-900 mb-2">Engagement Documentation</h4>
+          <p class="text-sm text-gray-500 leading-relaxed">Full scope definition, engagement letters, and confidentiality agreements before any work begins.</p>
+        </div>
+        <div class="method-step">
+          <div class="step-num">2</div>
+          <h4 class="font-semibold text-gray-900 mb-2">Risk Assessment & Planning</h4>
+          <p class="text-sm text-gray-500 leading-relaxed">Structured risk evaluation using our proprietary questionnaires and sector-specific benchmarks.</p>
+        </div>
+        <div class="method-step">
+          <div class="step-num">3</div>
+          <h4 class="font-semibold text-gray-900 mb-2">Field Work & Evidence Gathering</h4>
+          <p class="text-sm text-gray-500 leading-relaxed">Rigorous, technology-supported fieldwork with real-time documentation and client liaison at every stage.</p>
+        </div>
+        <div class="method-step">
+          <div class="step-num">4</div>
+          <h4 class="font-semibold text-gray-900 mb-2">Review & Quality Assurance</h4>
+          <p class="text-sm text-gray-500 leading-relaxed">Partner-level review of all deliverables against professional standards (ICAN, IFRS, GAAS) before release.</p>
+        </div>
+        <div class="method-step" style="padding-bottom:0;">
+          <div class="step-num">5</div>
+          <h4 class="font-semibold text-gray-900 mb-2">Reporting & Recommendations</h4>
+          <p class="text-sm text-gray-500 leading-relaxed">Clear, actionable reports presented to management and those charged with governance, with follow-up support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     PARTNER FIRM
+════════════════════════════════════════ -->
+<section id="partner" class="py-24 px-6" style="background: var(--cream);">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="gold-rule mx-auto mb-6"></div>
+      <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Our Technology Arm</p>
+      <h2 class="text-4xl md:text-5xl font-display font-semibold text-gray-900 leading-tight">
+        Link Options & Systems Ltd
+      </h2>
+      <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+        Associate member firm providing cutting-edge business software and IT consulting services — extending YSO's capability into technology-driven business transformation.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          Link Options & Systems Limited is an Information Technology company and associate member of Yemi Segun Ogundipe & Co. The firm holds proprietary distribution rights to several enterprise software solutions across Nigeria, with subsidiaries and knowledge-sharing partnerships in South Africa and Singapore.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Within the firm, we have in-house IT Consultants, Programmers, and Database Administrators deployable at short notice to resolve technical and business issues — a rare combination of accounting rigour and technology capability.
+        </p>
+
+        <h4 class="font-semibold text-gray-800 mb-4">Software Portfolio</h4>
+        <div class="grid grid-cols-2 gap-3">
+          <a href="https://www.sage.com" target="_blank" rel="noopener" class="partner-badge">
+            <div style="width:28px;height:28px;background:#00b140;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="text-white text-xs font-bold">S</span>
+            </div>
+            SAGE 200 / 300 ERP
+          </a>
+          <a href="https://www.absalom.co.za" target="_blank" rel="noopener" class="partner-badge">
+            <div style="width:28px;height:28px;background:#1a4a8a;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="text-white text-xs font-bold">A</span>
+            </div>
+            Absalom HR ERP
+          </a>
+          <a href="https://www.labware.com" target="_blank" rel="noopener" class="partner-badge">
+            <div style="width:28px;height:28px;background:#6b34ac;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="text-white text-xs font-bold">L</span>
+            </div>
+            LabWare QC
+          </a>
+          <div class="partner-badge">
+            <div style="width:28px;height:28px;background:#d4a843;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="text-white text-xs font-bold">AL</span>
+            </div>
+            Alchemex Reporting
+          </div>
+        </div>
+      </div>
+
+      <!-- Capabilities -->
+      <div style="background:var(--forest);border-radius:16px;padding:36px;">
+        <h4 class="font-display text-xl font-semibold text-white mb-6">Technology Capabilities</h4>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d4a843"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-white/80 text-sm">Enterprise ERP implementation & customisation</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d4a843"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-white/80 text-sm">Accounting & Revenue Cycle Management Software</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d4a843"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-white/80 text-sm">HR ERP solutions for mid-large enterprises</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d4a843"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-white/80 text-sm">Business Intelligence & financial reporting</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d4a843"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-white/80 text-sm">Database administration & IT support contracts</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d4a843"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-white/80 text-sm">International network: South Africa · Singapore</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section id="contact" class="py-24 px-6" style="background:#fff;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16">
+
+      <!-- Contact info -->
+      <div>
+        <div class="gold-rule mb-6"></div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Reach Us</p>
+        <h2 class="text-4xl font-display font-semibold text-gray-900 mb-8 leading-snug">
+          Let's discuss how we<br/>can serve your business.
+        </h2>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" transform="scale(0.9) translate(1,1)"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">Head Office</p>
+              <p class="text-sm text-gray-500 leading-relaxed">45 Berkeley Street, 3rd Floor, Left Wing<br/>Onikan, Lagos, Nigeria</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.61 19.79 19.79 0 01.09 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 6.91a16 16 0 006 6l.27-.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" transform="scale(0.85) translate(1.5, 1.5)"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">Mobile</p>
+              <a href="tel:+2348033081736" class="text-sm text-gray-500 hover:text-forest-700 transition-colors">+234 803 308 1736</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" transform="scale(0.85) translate(1.5, 1.5)"/><polyline points="22 6 12 13 2 6" transform="scale(0.85) translate(1.5, 1.5)"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">Email</p>
+              <a href="mailto:yemi.ogundipe@linkoptionsng.com" class="text-sm text-gray-500 hover:text-forest-700 transition-colors block">yemi.ogundipe@linkoptionsng.com</a>
+              <a href="mailto:info@linkoptionsng.com" class="text-sm text-gray-500 hover:text-forest-700 transition-colors block mt-1">info@linkoptionsng.com</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" transform="scale(0.8) translate(2.4,2.4)"/><line x1="2" y1="12" x2="22" y2="12" transform="scale(0.8) translate(2.4,2.4)"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" transform="scale(0.8) translate(2.4,2.4)"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 mb-1">Website</p>
+              <a href="https://www.linkoptionsng.com" target="_blank" rel="noopener" class="text-sm text-gray-500 hover:text-forest-700 transition-colors block">www.linkoptionsng.com</a>
+              <span class="text-sm text-gray-400">www.yso.ng (coming soon)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div>
+        <div class="service-card" style="border-radius:16px;">
+          <h3 class="font-display text-xl font-semibold text-gray-900 mb-6">Send us a message</h3>
+
+          <!--
+            FORM DELIVERY: This form POSTs to Formspree, a free form-backend
+            service, which forwards every submission by email to
+            yemi.ogundipe@linkoptionsng.com — no server required.
+
+            SETUP (one-time, ~2 minutes):
+            1. Go to https://formspree.io and sign up free using
+               yemi.ogundipe@linkoptionsng.com
+            2. Create a new form — Formspree gives you an endpoint like
+               https://formspree.io/f/abcdwxyz
+            3. Replace YOUR_FORM_ID below with that ID.
+            4. Formspree sends one confirmation email to verify the address —
+               click the link in it once, and the form goes live.
+          -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="form-label" for="fname">First Name</label>
+                <input class="form-input" type="text" id="fname" name="first_name" placeholder="Chukwuemeka" required />
+              </div>
+              <div>
+                <label class="form-label" for="lname">Last Name</label>
+                <input class="form-input" type="text" id="lname" name="last_name" placeholder="Adeyemi" required />
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="mb-4">
+              <label class="form-label" for="service">Service of Interest</label>
+              <select class="form-input" id="service" name="service_of_interest">
+                <option value="">Select a service…</option>
+                <option>Statutory Audit</option>
+                <option>Tax Compliance Audit</option>
+                <option>Revenue Monitoring</option>
+                <option>Forensic Investigation</option>
+                <option>Management Consulting</option>
+                <option>Staff Outsourcing & Recruitment</option>
+                <option>IT / Software Solutions</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="mb-6">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-input" id="message" name="message" rows="4" placeholder="Tell us briefly about your business and how we can help…" required></textarea>
+            </div>
+
+            <!-- Honeypot field to deter basic spam bots; hidden from real users -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+            <!-- Friendly subject line for the email Formspree sends -->
+            <input type="hidden" name="_subject" value="New enquiry from YSO website" />
+
+            <button type="submit" id="form-submit-btn" class="btn-primary w-full text-center">Send Message</button>
+
+            <p id="form-success" class="hidden text-center text-sm mt-4 font-medium" style="color:var(--forest);">
+              ✓ Thank you — your message has been sent. We'll be in touch within one business day.
+            </p>
+            <p id="form-error" class="hidden text-center text-sm mt-4 font-medium" style="color:#b91c1c;">
+              Something went wrong sending your message. Please email us directly at
+              <a href="mailto:yemi.ogundipe@linkoptionsng.com" style="text-decoration:underline;">yemi.ogundipe@linkoptionsng.com</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer style="background: #0e210f; color: rgba(255,255,255,0.7);">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-4 gap-12 mb-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="yso-logo yso-logo-light mb-6">
+          <div class="yso-mark">
+            <span class="yso-mark-text">YSO</span>
+          </div>
+          <div class="yso-wordmark">
+            <span class="yso-wordmark-top">Yemi Segun Ogundipe & Co</span>
+            <span class="yso-wordmark-sub">Chartered Accountants</span>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed max-w-sm" style="color:rgba(255,255,255,0.5);">
+          A reputable indigenous firm of Chartered Accountants registered with the Company Registry, Abuja. Serving Nigeria with integrity since our founding.
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h5 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Navigation</h5>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#about"    class="hover:text-white transition-colors">About</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#partner"  class="hover:text-white transition-colors">Partner Firm</a></li>
+          <li><a href="#contact"  class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h5 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Contact</h5>
+        <ul class="space-y-3 text-sm">
+          <li>45 Berkeley Street, 3rd Floor<br/>Onikan, Lagos, Nigeria</li>
+          <li><a href="tel:+2348033081736" class="hover:text-white transition-colors">+234 803 308 1736</a></li>
+          <li><a href="mailto:yemi.ogundipe@linkoptionsng.com" class="hover:text-white transition-colors break-all">yemi.ogundipe@linkoptionsng.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <p class="text-xs" style="color:rgba(255,255,255,0.35);">
+        © 2025 Yemi Segun Ogundipe & Co (Chartered Accountants). All rights reserved.
+      </p>
+      <p class="text-xs" style="color:rgba(255,255,255,0.25);">
+        Registered in Nigeria · CAMA Compliant · ICAN Members
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════ -->
+<script>
+  // Sticky nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMenu() { mobileMenu.classList.remove('open'); }
+
+  // Contact form — real submission to Formspree (no page reload)
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = document.getElementById('form-submit-btn');
+    const successMsg = document.getElementById('form-success');
+    const errorMsg = document.getElementById('form-error');
+    errorMsg.classList.add('hidden');
+
+    const originalLabel = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        btn.style.display = 'none';
+        successMsg.classList.remove('hidden');
+        contactForm.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      errorMsg.classList.remove('hidden');
+      btn.textContent = originalLabel;
+      btn.disabled = false;
+    }
+  });
+
+  // Intersection observer for subtle fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.service-card, .method-step, .partner-badge').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
