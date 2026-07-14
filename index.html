@@ -19,15 +19,15 @@
             body: ['Inter', 'system-ui', 'sans-serif'],
           },
           colors: {
-            forest: {
-              50:  '#f2f7f2',
-              100: '#deeede',
+            navy: {
+              50:  '#eef2fa',
+              100: '#dce6f5',
               200: '#b8d9b8',
-              500: '#3a7d44',
-              600: '#2e6535',
-              700: '#234e28',
-              800: '#183719',
-              900: '#0e210f',
+              500: '#1e4d9e',
+              600: '#1a3a6b',
+              700: '#0f2044',
+              800: '#12295a',
+              900: '#081530',
             },
             gold: {
               300: '#e8c97a',
@@ -36,29 +36,29 @@
               600: '#9a6f12',
             },
             ink: '#1a1a18',
-            cream: '#faf9f6',
+            cream: '#ffffff',
           },
         }
       }
     }
   </script>
 
-  <!-- Favicon: SVG data URI — works in all modern browsers -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232e6535'/%3E%3Crect x='36' y='36' width='28' height='28' rx='10' fill='%23d4a843' opacity='0.35'/%3E%3Ctext x='7' y='46' font-family='Georgia%2C serif' font-style='italic' font-weight='700' font-size='30' fill='white' letter-spacing='-1'%3EYSO%3C/text%3E%3C/svg%3E">
+  <!-- Favicon: SVG data URI, works in all modern browsers -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32%2C4 60%2C20 60%2C44 32%2C60 4%2C44 4%2C20' fill='%231a3a6b'/%3E%3Cpolygon points='32%2C14 52%2C26 52%2C38 32%2C50 12%2C38 12%2C26' fill='%230f2044'/%3E%3Ctext x='16' y='43' font-family='Georgia%2Cserif' font-style='italic' font-weight='700' font-size='22' fill='white'%3EYSO%3C/text%3E%3C/svg%3E">
   <!-- Fallback PNG favicon for older browsers -->
-  <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232e6535'/%3E%3Ctext x='7' y='46' font-family='Georgia%2C serif' font-style='italic' font-weight='700' font-size='30' fill='white'%3EYSO%3C/text%3E%3C/svg%3E">
+  <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a3a6b'/%3E%3Ctext x='7' y='46' font-family='Georgia%2C serif' font-style='italic' font-weight='700' font-size='30' fill='white'%3EYSO%3C/text%3E%3C/svg%3E">
 
   <style>
     :root {
-      --forest: #2e6535;
+      --navy: #1a3a6b;
       --gold: #d4a843;
       --ink: #1a1a18;
-      --cream: #faf9f6;
+      --cream: #ffffff;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: var(--ink); }
 
     /* ── Logo ── */
     .yso-logo {
@@ -67,42 +67,21 @@
       gap: 14px;
       text-decoration: none;
     }
+    /* ── Chevron mark ── */
     .yso-mark {
       position: relative;
       width: 52px;
       height: 52px;
-      background: var(--forest);
-      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
       flex-shrink: 0;
     }
-    .yso-mark::before {
-      content: '';
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 28px; height: 28px;
-      background: var(--gold);
-      border-radius: 8px 0 8px 0;
-      opacity: 0.35;
-    }
-    .yso-mark-text {
-      position: relative;
-      z-index: 1;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 19px;
-      color: #fff;
-      letter-spacing: -0.5px;
-      line-height: 1;
-      user-select: none;
-    }
-    .yso-mark-lg .yso-mark-text { font-size: 24px; }
+    .yso-mark svg { width: 52px; height: 52px; }
+    .yso-mark-lg svg { width: 64px; height: 64px; }
+    .yso-mark-text { display: none; }
     .yso-wordmark { display: flex; flex-direction: column; line-height: 1; }
-    .yso-wordmark-top { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--forest); letter-spacing: 0.01em; }
+    .yso-wordmark-top { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: #1a3a6b; letter-spacing: 0.01em; }
     .yso-wordmark-sub { font-family: 'Inter', system-ui, sans-serif; font-size: 10px; font-weight: 500; color: #6b7280; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 3px; }
 
     /* Logo on dark bg */
@@ -111,13 +90,13 @@
 
     /* ── Nav ── */
     #nav { transition: background 0.3s, box-shadow 0.3s; }
-    #nav.scrolled { background: rgba(250,249,246,0.97); box-shadow: 0 1px 24px rgba(0,0,0,0.07); }
+    #nav.scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 1px 24px rgba(0,0,0,0.08); }
 
     /* ── Hero ── */
     .hero-bg {
       background:
-        linear-gradient(to bottom right, rgba(14,33,15,0.92) 0%, rgba(46,101,53,0.85) 60%, rgba(46,101,53,0.7) 100%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='%23234e28'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%232e6535' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E");
+        linear-gradient(to bottom right, rgba(8,21,48,0.95) 0%, rgba(10,24,70,0.92) 60%, rgba(26,58,107,0.8) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='%230f2044'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%231a3a6b' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E");
       background-size: cover;
     }
 
@@ -149,7 +128,7 @@
 
     .service-icon {
       width: 48px; height: 48px;
-      background: #f2f7f2;
+      background: #eef2fa;
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 20px;
@@ -179,7 +158,7 @@
       position: absolute;
       left: 0; top: 0;
       width: 44px; height: 44px;
-      background: var(--forest);
+      background: var(--navy);
       color: #fff;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -211,13 +190,13 @@
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
     }
-    .form-input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(46,101,53,0.1); }
+    .form-input:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(26,58,107,0.12); }
     .form-label { display: block; font-size: 13px; font-weight: 500; color: #4b5563; margin-bottom: 6px; }
 
     /* ── CTA btn ── */
     .btn-primary {
       display: inline-block;
-      background: var(--forest);
+      background: var(--navy);
       color: #fff;
       font-weight: 600;
       font-size: 15px;
@@ -227,7 +206,7 @@
       transition: background 0.2s, transform 0.15s;
       border: none; cursor: pointer;
     }
-    .btn-primary:hover { background: #234e28; transform: translateY(-1px); }
+    .btn-primary:hover { background: #0f2044; transform: translateY(-1px); }
 
     .btn-outline {
       display: inline-block;
@@ -269,7 +248,11 @@
     <!-- Logo -->
     <a href="#home" class="yso-logo">
       <div class="yso-mark">
-        <span class="yso-mark-text">YSO</span>
+        <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+          <polygon points="26,2 50,15 50,37 26,50 2,37 2,15" fill="#1a3a6b"/>
+          <polygon points="26,11 42,20 42,32 26,41 10,32 10,20" fill="#0f2044"/>
+          <text x="11" y="35" font-family="Georgia,serif" font-style="italic" font-weight="700" font-size="17" fill="white">YSO</text>
+        </svg>
       </div>
       <div class="yso-wordmark">
         <span class="yso-wordmark-top">Yemi Segun Ogundipe</span>
@@ -279,11 +262,12 @@
 
     <!-- Desktop nav links -->
     <div class="hidden md:flex items-center gap-6">
-      <a href="#about"    class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">About</a>
-      <a href="#sectors"  class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">Sectors</a>
-      <a href="#services" class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">Services</a>
-      <a href="#insights" class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">Insights</a>
-      <a href="#contact"  class="text-sm font-medium text-gray-600 hover:text-forest-700 transition-colors">Contact</a>
+      <a href="#about"    class="text-sm font-medium text-gray-600 hover:text-navy-700 transition-colors">About</a>
+      <a href="#sectors"  class="text-sm font-medium text-gray-600 hover:text-navy-700 transition-colors">Sectors</a>
+      <a href="#services" class="text-sm font-medium text-gray-600 hover:text-navy-700 transition-colors">Services</a>
+      <a href="#insights" class="text-sm font-medium text-gray-600 hover:text-navy-700 transition-colors">Insights</a>
+      <a href="#contact"  class="text-sm font-medium text-gray-600 hover:text-navy-700 transition-colors">Contact</a>
+      <a href="careers.html" class="text-sm font-medium text-gray-600 hover:text-navy-700 transition-colors">Careers</a>
       <a href="#rfp" class="btn-primary" style="padding: 10px 22px; font-size: 14px;">Submit RFP</a>
     </div>
 
@@ -303,6 +287,7 @@
       <a href="#services" onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Services</a>
       <a href="#insights" onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Insights</a>
       <a href="#contact"  onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Contact</a>
+      <a href="careers.html" onclick="closeMenu()" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Careers</a>
       <a href="#rfp"      onclick="closeMenu()" class="mx-4 mt-2 btn-primary text-center" style="padding:10px 16px;font-size:14px;">Submit RFP</a>
     </div>
   </div>
@@ -313,15 +298,19 @@
 ════════════════════════════════════════ -->
 <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
   <!-- Decorative circle -->
-  <div class="absolute top-24 right-12 w-72 h-72 rounded-full opacity-5" style="background: #d4a843;"></div>
-  <div class="absolute bottom-12 left-8 w-44 h-44 rounded-full opacity-5" style="background: #d4a843;"></div>
+  <div class="absolute top-24 right-12 w-96 h-96 rounded-full" style="background:rgba(212,168,67,0.06);"></div>
+  <div class="absolute bottom-12 left-8 w-64 h-64 rounded-full" style="background:rgba(255,255,255,0.03);"></div>
 
   <div class="max-w-6xl mx-auto px-6 py-32 w-full">
     <div class="max-w-3xl">
       <!-- Logo (hero version) -->
       <div class="yso-logo yso-logo-light mb-10 fade-up">
-        <div class="yso-mark yso-mark-lg" style="width:64px;height:64px;">
-          <span class="yso-mark-text">YSO</span>
+        <div class="yso-mark yso-mark-lg">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+            <polygon points="32,2 62,18 62,46 32,62 2,46 2,18" fill="#1a3a6b"/>
+            <polygon points="32,12 52,24 52,40 32,52 12,40 12,24" fill="#0f2044"/>
+            <text x="13" y="43" font-family="Georgia,serif" font-style="italic" font-weight="700" font-size="21" fill="white">YSO</text>
+          </svg>
         </div>
         <div class="yso-wordmark">
           <span class="yso-wordmark-top" style="font-size:22px;">Yemi Segun Ogundipe & Co</span>
@@ -335,7 +324,7 @@
         Results.
       </h1>
       <p class="text-lg md:text-xl text-white/75 leading-relaxed mb-10 max-w-xl fade-up delay-2">
-        A reputable indigenous firm of Chartered Accountants delivering statutory audit, taxation, and management consulting services across Nigeria — powered by over 40 years of practice excellence.
+        A reputable indigenous firm of Chartered Accountants delivering statutory audit, taxation, and management consulting services across Nigeria, powered by over 40 years of practice excellence.
       </p>
       <div class="flex flex-wrap gap-4 fade-up delay-3">
         <a href="#services" class="btn-primary">Explore Our Services</a>
@@ -354,7 +343,7 @@
 <!-- ════════════════════════════════════════
      STATS BAND
 ════════════════════════════════════════ -->
-<section style="background: var(--forest);">
+<section style="background: #1a3a6b;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4">
       <div class="stat-card">
@@ -380,7 +369,7 @@
 <!-- ════════════════════════════════════════
      MISSION & VISION
 ════════════════════════════════════════ -->
-<section id="about" class="py-24 px-6" style="background:#fff;">
+<section id="about" class="py-24 px-6" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto">
 
     <div class="grid md:grid-cols-2 gap-16 items-start">
@@ -392,19 +381,19 @@
           Excellence with integrity, every engagement.
         </h2>
         <p class="text-gray-600 leading-relaxed text-base">
-          To be a reputable indigenous firm of Chartered Accountants offering excellent service with integrity — motivating staff to support the firm with passion by adding measurable value to client businesses using cutting-edge technology.
+          To be a reputable indigenous firm of Chartered Accountants offering excellent service with integrity, motivating staff to support the firm with passion by adding measurable value to client businesses using cutting-edge technology.
         </p>
       </div>
 
       <!-- Vision -->
-      <div style="background:#f2f7f2; border-radius:16px; padding:36px;">
+      <div style="background:#eef2fa; border-radius:16px; padding:36px;">
         <div class="gold-rule mb-6"></div>
         <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Our Vision</p>
-        <h2 class="text-3xl md:text-4xl font-display font-semibold leading-tight mb-6" style="color: var(--forest);">
+        <h2 class="text-3xl md:text-4xl font-display font-semibold leading-tight mb-6" style="color: var(--navy);">
           Nigeria's referral practice of choice.
         </h2>
         <p class="text-gray-600 leading-relaxed text-base">
-          To be the referral practice firm in the Nigerian professional accountancy business — distinguished by our commitment to innovative technology and the highest professional standards.
+          To be the referral practice firm in the Nigerian professional accountancy business, distinguished by our commitment to innovative technology and the highest professional standards.
         </p>
       </div>
     </div>
@@ -425,18 +414,18 @@
           As a medium-scale indigenous firm, we bring the personal attention of a boutique practice with the rigour and methodology of a Big Four heritage. Our Managing Partner, Mr Yemi Ogundipe, is an alumnus of Coopers & Lybrand (now PricewaterhouseCoopers) with over 40 years of practice experience in accountancy, taxation, consulting, and IT.
         </p>
         <p class="text-gray-600 leading-relaxed">
-          We are presently pursuing strategic alliances with similar firms to broaden our service offering and build a sustainable practice for the future — while remaining deeply rooted in our Nigerian identity.
+          We are presently pursuing strategic alliances with similar firms to broaden our service offering and build a sustainable practice for the future, while remaining deeply rooted in our Nigerian identity.
         </p>
       </div>
 
       <!-- Managing partner card -->
       <div class="md:col-span-2">
         <div class="service-card">
-          <div style="width:72px;height:72px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <div style="width:72px;height:72px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
             <span class="font-display text-white text-2xl font-bold">YO</span>
           </div>
           <h3 class="text-xl font-display font-semibold text-gray-900 mb-1">Mr. Yemi Segun Ogundipe</h3>
-          <p class="text-sm font-medium mb-1" style="color: var(--forest);">Managing Partner</p>
+          <p class="text-sm font-medium mb-1" style="color: var(--navy);">Managing Partner</p>
           <p class="text-sm text-gray-400 mb-4">B.Sc (Hons) Economics · FCA</p>
           <div class="section-divider" style="max-width:100%;margin:0 0 16px;background:linear-gradient(to right, #e8e6e1, transparent);"></div>
           <ul class="space-y-2">
@@ -466,7 +455,7 @@
 <!-- ════════════════════════════════════════
      SERVICES
 ════════════════════════════════════════ -->
-<section id="services" class="py-24 px-6" style="background: var(--cream);">
+<section id="services" class="py-24 px-6" style="background: #f8faff;">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
       <div class="gold-rule mx-auto mb-6"></div>
@@ -484,20 +473,20 @@
       <!-- Statutory Audit -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
           </svg>
         </div>
         <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Statutory Audit</h3>
         <p class="text-sm text-gray-500 leading-relaxed">
-          Independent audit services for public and private sector clients, executed with meticulous documentation and professional scepticism — giving stakeholders the assurance they need.
+          Independent audit services for public and private sector clients, executed with meticulous documentation and professional scepticism, giving stakeholders the assurance they need.
         </p>
       </div>
 
       <!-- Tax Compliance -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
           </svg>
         </div>
@@ -510,7 +499,7 @@
       <!-- Revenue Monitoring -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
           </svg>
         </div>
@@ -523,20 +512,20 @@
       <!-- Forensic Investigation -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M8 11h6M11 8v6"/>
           </svg>
         </div>
         <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Forensic Investigation</h3>
         <p class="text-sm text-gray-500 leading-relaxed">
-          Special investigations, including forensic audit, fraud examination, and litigation support — conducted with objectivity, confidentiality, and evidentiary rigour.
+          Special investigations, including forensic audit, fraud examination, and litigation support, conducted with objectivity, confidentiality, and evidentiary rigour.
         </p>
       </div>
 
       <!-- Management Consulting -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
           </svg>
         </div>
@@ -549,13 +538,13 @@
       <!-- Staff Outsourcing -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
           </svg>
         </div>
         <h3 class="text-lg font-display font-semibold text-gray-900 mb-3">Staff Outsourcing & Recruitment</h3>
         <p class="text-sm text-gray-500 leading-relaxed">
-          Head-hunting and outsourcing of high-skilled finance, IT, and accounting professionals — placing the right talent domestically and internationally, at short notice.
+          Head-hunting and outsourcing of high-skilled finance, IT, and accounting professionals, placing the right talent domestically and internationally, at short notice.
         </p>
       </div>
 
@@ -566,7 +555,7 @@
 <!-- ════════════════════════════════════════
      WORK METHODOLOGY
 ════════════════════════════════════════ -->
-<section class="py-24 px-6" style="background:#fff;">
+<section class="py-24 px-6" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-16 items-start">
 
@@ -580,10 +569,10 @@
           The firm operates with standard questionnaires and full documentation of policies and procedures. Every engagement is governed by a formal confidentiality agreement and engagement letter, ensuring clarity and protecting your interests from day one.
         </p>
         <p class="text-gray-600 leading-relaxed mb-4">
-          Corporate governance is not an afterthought for us — it is embedded in how we run our own practice. Mr Yemi Ogundipe was part of the consortium that brought Professor Konner (a director of 20 Fortune 500 companies and PKF partner) to Nigeria in 2003 for a landmark Corporate Governance seminar at the Muson Centre.
+          Corporate governance is not an afterthought for us, it is embedded in how we run our own practice. Mr Yemi Ogundipe was part of the consortium that brought Professor Konner (a director of 20 Fortune 500 companies and PKF partner) to Nigeria in 2003 for a landmark Corporate Governance seminar at the Muson Centre.
         </p>
         <p class="text-gray-600 leading-relaxed">
-          Our own financials are independently audited year on year by a reputable firm — because we hold ourselves to the same standards we set for our clients.
+          Our own financials are independently audited year on year by a reputable firm, because we hold ourselves to the same standards we set for our clients.
         </p>
       </div>
 
@@ -622,7 +611,7 @@
 <!-- ════════════════════════════════════════
      PARTNER FIRM
 ════════════════════════════════════════ -->
-<section id="partner" class="py-24 px-6" style="background: var(--cream);">
+<section id="partner" class="py-24 px-6" style="background: #f8faff;">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
       <div class="gold-rule mx-auto mb-6"></div>
@@ -631,7 +620,7 @@
         Link Options & Systems Ltd
       </h2>
       <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
-        Associate member firm providing cutting-edge business software and IT consulting services — extending YSO's capability into technology-driven business transformation.
+        Associate member firm providing cutting-edge business software and IT consulting services, extending YSO's capability into technology-driven business transformation.
       </p>
     </div>
 
@@ -641,7 +630,7 @@
           Link Options & Systems Limited is an Information Technology company and associate member of Yemi Segun Ogundipe & Co. The firm holds proprietary distribution rights to several enterprise software solutions across Nigeria, with subsidiaries and knowledge-sharing partnerships in South Africa and Singapore.
         </p>
         <p class="text-gray-600 leading-relaxed mb-8">
-          Within the firm, we have in-house IT Consultants, Programmers, and Database Administrators deployable at short notice to resolve technical and business issues — a rare combination of accounting rigour and technology capability.
+          Within the firm, we have in-house IT Consultants, Programmers, and Database Administrators deployable at short notice to resolve technical and business issues, a rare combination of accounting rigour and technology capability.
         </p>
 
         <h4 class="font-semibold text-gray-800 mb-4">Software Portfolio</h4>
@@ -674,7 +663,7 @@
       </div>
 
       <!-- Capabilities -->
-      <div style="background:var(--forest);border-radius:16px;padding:36px;">
+      <div style="background:#1a3a6b;border-radius:16px;padding:36px;">
         <h4 class="font-display text-xl font-semibold text-white mb-6">Technology Capabilities</h4>
         <ul class="space-y-4">
           <li class="flex items-start gap-3">
@@ -710,7 +699,7 @@
 <!-- ════════════════════════════════════════
      CONTACT
 ════════════════════════════════════════ -->
-<section id="contact" class="py-24 px-6" style="background:#fff;">
+<section id="contact" class="py-24 px-6" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-16">
 
@@ -724,8 +713,8 @@
 
         <div class="space-y-6">
           <div class="flex items-start gap-4">
-            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" transform="scale(0.9) translate(1,1)"/></svg>
+            <div style="width:44px;height:44px;background:#eef2fa;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#1a3a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" transform="scale(0.9) translate(1,1)"/></svg>
             </div>
             <div>
               <p class="font-semibold text-gray-800 mb-1">Head Office</p>
@@ -734,33 +723,33 @@
           </div>
 
           <div class="flex items-start gap-4">
-            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.61 19.79 19.79 0 01.09 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 6.91a16 16 0 006 6l.27-.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" transform="scale(0.85) translate(1.5, 1.5)"/></svg>
+            <div style="width:44px;height:44px;background:#eef2fa;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#1a3a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.61 19.79 19.79 0 01.09 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 6.91a16 16 0 006 6l.27-.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" transform="scale(0.85) translate(1.5, 1.5)"/></svg>
             </div>
             <div>
               <p class="font-semibold text-gray-800 mb-1">Mobile</p>
-              <a href="tel:+2348033081736" class="text-sm text-gray-500 hover:text-forest-700 transition-colors">+234 803 308 1736</a>
+              <a href="tel:+2348033081736" class="text-sm text-gray-500 hover:text-navy-700 transition-colors">+234 803 308 1736</a>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
-            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" transform="scale(0.85) translate(1.5, 1.5)"/><polyline points="22 6 12 13 2 6" transform="scale(0.85) translate(1.5, 1.5)"/></svg>
+            <div style="width:44px;height:44px;background:#eef2fa;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#1a3a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" transform="scale(0.85) translate(1.5, 1.5)"/><polyline points="22 6 12 13 2 6" transform="scale(0.85) translate(1.5, 1.5)"/></svg>
             </div>
             <div>
               <p class="font-semibold text-gray-800 mb-1">Email</p>
-              <a href="mailto:yemi.ogundipe@linkoptionsng.com" class="text-sm text-gray-500 hover:text-forest-700 transition-colors block">yemi.ogundipe@linkoptionsng.com</a>
-              <a href="mailto:info@linkoptionsng.com" class="text-sm text-gray-500 hover:text-forest-700 transition-colors block mt-1">info@linkoptionsng.com</a>
+              <a href="mailto:yemi.ogundipe@linkoptionsng.com" class="text-sm text-gray-500 hover:text-navy-700 transition-colors block">yemi.ogundipe@linkoptionsng.com</a>
+              <a href="mailto:info@linkoptionsng.com" class="text-sm text-gray-500 hover:text-navy-700 transition-colors block mt-1">info@linkoptionsng.com</a>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
-            <div style="width:44px;height:44px;background:#f2f7f2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2e6535" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" transform="scale(0.8) translate(2.4,2.4)"/><line x1="2" y1="12" x2="22" y2="12" transform="scale(0.8) translate(2.4,2.4)"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" transform="scale(0.8) translate(2.4,2.4)"/></svg>
+            <div style="width:44px;height:44px;background:#eef2fa;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#1a3a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" transform="scale(0.8) translate(2.4,2.4)"/><line x1="2" y1="12" x2="22" y2="12" transform="scale(0.8) translate(2.4,2.4)"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" transform="scale(0.8) translate(2.4,2.4)"/></svg>
             </div>
             <div>
               <p class="font-semibold text-gray-800 mb-1">Website</p>
-              <a href="https://www.linkoptionsng.com" target="_blank" rel="noopener" class="text-sm text-gray-500 hover:text-forest-700 transition-colors block">www.linkoptionsng.com</a>
+              <a href="https://www.linkoptionsng.com" target="_blank" rel="noopener" class="text-sm text-gray-500 hover:text-navy-700 transition-colors block">www.linkoptionsng.com</a>
               <span class="text-sm text-gray-400">www.yso.ng (coming soon)</span>
             </div>
           </div>
@@ -775,15 +764,15 @@
           <!--
             FORM DELIVERY: This form POSTs to Formspree, a free form-backend
             service, which forwards every submission by email to
-            yemi.ogundipe@linkoptionsng.com — no server required.
+            yemi.ogundipe@linkoptionsng.com, no server required.
 
             SETUP (one-time, ~2 minutes):
             1. Go to https://formspree.io and sign up free using
                yemi.ogundipe@linkoptionsng.com
-            2. Create a new form — Formspree gives you an endpoint like
+            2. Create a new form, Formspree gives you an endpoint like
                https://formspree.io/f/abcdwxyz
             3. Replace YOUR_FORM_ID below with that ID.
-            4. Formspree sends one confirmation email to verify the address —
+            4. Formspree sends one confirmation email to verify the address 
                click the link in it once, and the form goes live.
           -->
           <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
@@ -827,8 +816,8 @@
 
             <button type="submit" id="form-submit-btn" class="btn-primary w-full text-center">Send Message</button>
 
-            <p id="form-success" class="hidden text-center text-sm mt-4 font-medium" style="color:var(--forest);">
-              ✓ Thank you — your message has been sent. We'll be in touch within one business day.
+            <p id="form-success" class="hidden text-center text-sm mt-4 font-medium" style="color:var(--navy);">
+              ✓ Thank you, your message has been sent. We'll be in touch within one business day.
             </p>
             <p id="form-error" class="hidden text-center text-sm mt-4 font-medium" style="color:#b91c1c;">
               Something went wrong sending your message. Please email us directly at
@@ -844,14 +833,14 @@
 <!-- ════════════════════════════════════════
      SECTORS WE SERVE
 ════════════════════════════════════════ -->
-<section id="sectors" class="py-24 px-6" style="background:#fff;">
+<section id="sectors" class="py-24 px-6" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
       <div class="gold-rule mx-auto mb-6"></div>
       <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Where We Work</p>
       <h2 class="text-4xl md:text-5xl font-display font-semibold text-gray-900 leading-tight">Sectors We Serve</h2>
       <p class="text-gray-500 mt-4 max-w-xl mx-auto">
-        Across decades of practice, we have built deep sector knowledge that allows us to understand your business context — not just your accounts.
+        Across decades of practice, we have built deep sector knowledge that allows us to understand your business context, not just your accounts.
       </p>
     </div>
 
@@ -859,8 +848,8 @@
 
       <!-- Financial Services -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 00-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 00-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">Financial Services</h4>
         <p class="text-xs text-gray-500 leading-relaxed">Banks, microfinance, insurance & capital markets</p>
@@ -868,8 +857,8 @@
 
       <!-- Government & Public Sector -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">Government & Public Sector</h4>
         <p class="text-xs text-gray-500 leading-relaxed">MDAs, parastatals & state government agencies</p>
@@ -877,8 +866,8 @@
 
       <!-- Oil, Gas & Energy -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2l-5 9h3l-1 11 9-13h-4l2-7z"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2l-5 9h3l-1 11 9-13h-4l2-7z"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">Oil, Gas & Energy</h4>
         <p class="text-xs text-gray-500 leading-relaxed">Upstream, midstream, downstream & utilities</p>
@@ -886,8 +875,8 @@
 
       <!-- Manufacturing & FMCG -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V9l4-4 4 4v12M10 21v-5h4v5"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V9l4-4 4 4v12M10 21v-5h4v5"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">Manufacturing & FMCG</h4>
         <p class="text-xs text-gray-500 leading-relaxed">Consumer goods, food, beverages & industrial</p>
@@ -895,8 +884,8 @@
 
       <!-- NGOs & Development -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">NGOs & Development</h4>
         <p class="text-xs text-gray-500 leading-relaxed">International agencies, foundations & nonprofits</p>
@@ -904,8 +893,8 @@
 
       <!-- Telecoms & Technology -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">Telecoms & Technology</h4>
         <p class="text-xs text-gray-500 leading-relaxed">Telcos, IT firms, fintechs & digital platforms</p>
@@ -913,8 +902,8 @@
 
       <!-- Real Estate & Construction -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">Real Estate & Construction</h4>
         <p class="text-xs text-gray-500 leading-relaxed">Property developers, contractors & facilities</p>
@@ -922,8 +911,8 @@
 
       <!-- Agribusiness -->
       <div class="sector-card group rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-gold-400 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#f2f7f2;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e6535" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 3 2 3c0 5 4 9 10 9zM12 12c0-5 5-9 10-9 0 5-4 9-10 9z"/></svg>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:#eef2fa;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 3 2 3c0 5 4 9 10 9zM12 12c0-5 5-9 10-9 0 5-4 9-10 9z"/></svg>
         </div>
         <h4 class="font-semibold text-gray-800 text-sm mb-1">Agribusiness</h4>
         <p class="text-xs text-gray-500 leading-relaxed">Farming, processing, export & agri-finance</p>
@@ -936,7 +925,7 @@
 <!-- ════════════════════════════════════════
      INSIGHTS & PUBLICATIONS
 ════════════════════════════════════════ -->
-<section id="insights" class="py-24 px-6" style="background: var(--cream);">
+<section id="insights" class="py-24 px-6" style="background: #f8faff;">
   <div class="max-w-6xl mx-auto">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
       <div>
@@ -952,14 +941,14 @@
 
       <!-- Article 1 -->
       <article class="insight-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-250">
-        <div style="height:6px;background:linear-gradient(to right, var(--forest), #3a7d44);"></div>
+        <div style="height:6px;background:linear-gradient(to right, #1a3a6b, #1e4d9e);"></div>
         <div class="p-7">
-          <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4" style="background:#f2f7f2;color:var(--forest);">Tax Advisory</span>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4" style="background:#eef2fa;color:var(--navy);">Tax Advisory</span>
           <h3 class="font-display text-lg font-semibold text-gray-900 leading-snug mb-3">Key Changes Under the Nigeria Tax Act (NTA): What Businesses Must Know</h3>
           <p class="text-sm text-gray-500 leading-relaxed mb-5">The Nigeria Tax Act consolidates multiple existing tax laws into a single legal framework. We break down the critical compliance obligations and planning opportunities for Nigerian businesses.</p>
           <div class="flex items-center justify-between">
             <span class="text-xs text-gray-400">Yemi Segun Ogundipe & Co</span>
-            <a href="mailto:yemi.ogundipe@linkoptionsng.com?subject=Request: Nigeria Tax Act Article" class="text-xs font-semibold hover:underline" style="color:var(--forest);">Request PDF →</a>
+            <a href="mailto:yemi.ogundipe@linkoptionsng.com?subject=Request: Nigeria Tax Act Article" class="text-xs font-semibold hover:underline" style="color:var(--navy);">Request PDF →</a>
           </div>
         </div>
       </article>
@@ -973,21 +962,21 @@
           <p class="text-sm text-gray-500 leading-relaxed mb-5">Strong governance is no longer just for publicly-listed firms. We examine the frameworks small and mid-sized Nigerian businesses should adopt to build investor confidence and reduce risk.</p>
           <div class="flex items-center justify-between">
             <span class="text-xs text-gray-400">Yemi Segun Ogundipe & Co</span>
-            <a href="mailto:yemi.ogundipe@linkoptionsng.com?subject=Request: Corporate Governance Article" class="text-xs font-semibold hover:underline" style="color:var(--forest);">Request PDF →</a>
+            <a href="mailto:yemi.ogundipe@linkoptionsng.com?subject=Request: Corporate Governance Article" class="text-xs font-semibold hover:underline" style="color:var(--navy);">Request PDF →</a>
           </div>
         </div>
       </article>
 
       <!-- Article 3 -->
       <article class="insight-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-250">
-        <div style="height:6px;background:linear-gradient(to right, #234e28, var(--forest));"></div>
+        <div style="height:6px;background:linear-gradient(to right, #0f2044, #1a3a6b);"></div>
         <div class="p-7">
-          <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4" style="background:#f2f7f2;color:var(--forest);">Forensic Audit</span>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4" style="background:#eef2fa;color:var(--navy);">Forensic Audit</span>
           <h3 class="font-display text-lg font-semibold text-gray-900 leading-snug mb-3">Detecting & Preventing Financial Fraud in Nigerian Organisations</h3>
           <p class="text-sm text-gray-500 leading-relaxed mb-5">Fraud remains a persistent challenge across the Nigerian private and public sectors. Our forensic specialists outline the red flags, investigation process, and preventive controls every board should implement.</p>
           <div class="flex items-center justify-between">
             <span class="text-xs text-gray-400">Yemi Segun Ogundipe & Co</span>
-            <a href="mailto:yemi.ogundipe@linkoptionsng.com?subject=Request: Forensic Audit Article" class="text-xs font-semibold hover:underline" style="color:var(--forest);">Request PDF →</a>
+            <a href="mailto:yemi.ogundipe@linkoptionsng.com?subject=Request: Forensic Audit Article" class="text-xs font-semibold hover:underline" style="color:var(--navy);">Request PDF →</a>
           </div>
         </div>
       </article>
@@ -1002,7 +991,7 @@
 <!-- ════════════════════════════════════════
      SUBMIT AN RFP
 ════════════════════════════════════════ -->
-<section id="rfp" class="py-24 px-6" style="background:#fff;">
+<section id="rfp" class="py-24 px-6" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-16 items-start">
 
@@ -1019,7 +1008,7 @@
         </p>
         <div class="space-y-4">
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--forest);">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background:#1a3a6b;">
               <span class="text-white text-xs font-bold font-display">1</span>
             </div>
             <div>
@@ -1028,7 +1017,7 @@
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--forest);">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background:#1a3a6b;">
               <span class="text-white text-xs font-bold font-display">2</span>
             </div>
             <div>
@@ -1037,7 +1026,7 @@
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--forest);">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background:#1a3a6b;">
               <span class="text-white text-xs font-bold font-display">3</span>
             </div>
             <div>
@@ -1104,9 +1093,9 @@
             <textarea class="form-input" id="rfp-scope" name="project_scope" rows="4" placeholder="Briefly describe what you need, the scale of the engagement, and any specific requirements or deadlines…" required></textarea>
           </div>
           <input type="text"   name="_gotcha"  style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="_subject" value="New RFP Submission — YSO Website" />
+          <input type="hidden" name="_subject" value="New RFP Submission, YSO Website" />
           <button type="submit" id="rfp-submit-btn" class="btn-primary w-full text-center">Submit RFP</button>
-          <p id="rfp-success" class="hidden text-center text-sm mt-4 font-medium" style="color:var(--forest);">
+          <p id="rfp-success" class="hidden text-center text-sm mt-4 font-medium" style="color:var(--navy);">
             ✓ Your RFP has been received. We will acknowledge within 24 hours.
           </p>
           <p id="rfp-error" class="hidden text-center text-sm mt-4 font-medium" style="color:#b91c1c;">
@@ -1121,7 +1110,7 @@
 <!-- ════════════════════════════════════════
      CORPORATE RESPONSIBILITY
 ════════════════════════════════════════ -->
-<section class="py-20 px-6" style="background: var(--forest);">
+<section class="py-20 px-6" style="background: #1a3a6b;">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-3 gap-10 items-start">
 
@@ -1148,7 +1137,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22l-9-5V7l9-5 9 5v10l-9 5z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg>
           </div>
           <h4 class="font-semibold text-white text-sm mb-2">Ethics & Integrity</h4>
-          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.6);">We operate under the full ICAN Code of Professional Conduct. Our own financials are independently audited annually — we hold ourselves to the same bar we set for clients.</p>
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.6);">We operate under the full ICAN Code of Professional Conduct. Our own financials are independently audited annually, we hold ourselves to the same bar we set for clients.</p>
         </div>
 
         <div class="text-center">
@@ -1167,7 +1156,7 @@
 <!-- ════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════ -->
-<footer style="background: #0e210f; color: rgba(255,255,255,0.7);">
+<footer style="background: #081530; color: rgba(255,255,255,0.7);">
   <div class="max-w-6xl mx-auto px-6 py-16">
     <div class="grid md:grid-cols-4 gap-12 mb-12">
 
@@ -1175,7 +1164,11 @@
       <div class="md:col-span-2">
         <div class="yso-logo yso-logo-light mb-6">
           <div class="yso-mark">
-            <span class="yso-mark-text">YSO</span>
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+          <polygon points="26,2 50,15 50,37 26,50 2,37 2,15" fill="#1a3a6b"/>
+          <polygon points="26,11 42,20 42,32 26,41 10,32 10,20" fill="#0f2044"/>
+          <text x="11" y="35" font-family="Georgia,serif" font-style="italic" font-weight="700" font-size="17" fill="white">YSO</text>
+        </svg>
           </div>
           <div class="yso-wordmark">
             <span class="yso-wordmark-top">Yemi Segun Ogundipe & Co</span>
@@ -1220,6 +1213,7 @@
           <li><a href="#insights" class="hover:text-white transition-colors">Insights</a></li>
           <li><a href="#rfp"      class="hover:text-white transition-colors">Submit RFP</a></li>
           <li><a href="#contact"  class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
         </ul>
       </div>
 
@@ -1266,17 +1260,17 @@
       <p><strong>Last updated: 2025</strong></p>
       <p>Yemi Segun Ogundipe & Co ("the Firm", "we", "us") is committed to protecting the privacy of individuals who visit our website or contact us. This policy explains how we collect, use, and safeguard your personal data.</p>
       <h4 class="font-semibold text-gray-800 mt-4">Information We Collect</h4>
-      <p>We collect personal information you provide voluntarily through our contact and RFP forms — including your name, email address, phone number, organisation name, and the content of your enquiry. We do not collect any information automatically beyond standard server logs.</p>
+      <p>We collect personal information you provide voluntarily through our contact and RFP forms, including your name, email address, phone number, organisation name, and the content of your enquiry. We do not collect any information automatically beyond standard server logs.</p>
       <h4 class="font-semibold text-gray-800 mt-4">How We Use Your Information</h4>
       <p>Information submitted via this website is used solely to respond to your enquiry or proposal request. We do not sell, share, or transfer your personal data to third parties, except where required by Nigerian law or as necessary to deliver the services you have requested.</p>
       <h4 class="font-semibold text-gray-800 mt-4">Data Retention</h4>
       <p>Enquiry data is retained for a period of twelve (12) months from the date of receipt, after which it is securely deleted unless an ongoing client relationship requires longer retention.</p>
       <h4 class="font-semibold text-gray-800 mt-4">Your Rights</h4>
-      <p>You have the right to request access to, correction of, or deletion of your personal data held by the Firm. To exercise these rights, please contact us at <a href="mailto:yemi.ogundipe@linkoptionsng.com" style="color:var(--forest);">yemi.ogundipe@linkoptionsng.com</a>.</p>
+      <p>You have the right to request access to, correction of, or deletion of your personal data held by the Firm. To exercise these rights, please contact us at <a href="mailto:yemi.ogundipe@linkoptionsng.com" style="color:var(--navy);">yemi.ogundipe@linkoptionsng.com</a>.</p>
       <h4 class="font-semibold text-gray-800 mt-4">Third-Party Form Processing</h4>
       <p>This website uses Formspree (formspree.io) to process form submissions. Formspree is a GDPR-compliant service. Please refer to Formspree's privacy policy for details of their data handling practices.</p>
       <h4 class="font-semibold text-gray-800 mt-4">Contact</h4>
-      <p>For any privacy-related queries, please write to:<br/><strong>Yemi Segun Ogundipe & Co</strong>, 45 Berkeley Street, Onikan, Lagos, Nigeria<br/>Email: <a href="mailto:yemi.ogundipe@linkoptionsng.com" style="color:var(--forest);">yemi.ogundipe@linkoptionsng.com</a></p>
+      <p>For any privacy-related queries, please write to:<br/><strong>Yemi Segun Ogundipe & Co</strong>, 45 Berkeley Street, Onikan, Lagos, Nigeria<br/>Email: <a href="mailto:yemi.ogundipe@linkoptionsng.com" style="color:var(--navy);">yemi.ogundipe@linkoptionsng.com</a></p>
     </div>
   </div>
 </div>
@@ -1302,7 +1296,7 @@
       <h4 class="font-semibold text-gray-800 mt-4">Governing Law</h4>
       <p>This disclaimer is governed by the laws of the Federal Republic of Nigeria. Any disputes arising from the use of this website shall be subject to the exclusive jurisdiction of the Nigerian courts.</p>
       <h4 class="font-semibold text-gray-800 mt-4">Contact</h4>
-      <p><strong>Yemi Segun Ogundipe & Co</strong><br/>45 Berkeley Street, Onikan, Lagos, Nigeria<br/>Email: <a href="mailto:yemi.ogundipe@linkoptionsng.com" style="color:var(--forest);">yemi.ogundipe@linkoptionsng.com</a></p>
+      <p><strong>Yemi Segun Ogundipe & Co</strong><br/>45 Berkeley Street, Onikan, Lagos, Nigeria<br/>Email: <a href="mailto:yemi.ogundipe@linkoptionsng.com" style="color:var(--navy);">yemi.ogundipe@linkoptionsng.com</a></p>
     </div>
   </div>
 </div>
@@ -1323,7 +1317,7 @@
   burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   function closeMenu() { mobileMenu.classList.remove('open'); }
 
-  // Contact form — real submission to Formspree (no page reload)
+  // Contact form, real submission to Formspree (no page reload)
   const contactForm = document.getElementById('contact-form');
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1358,7 +1352,7 @@
     }
   });
 
-  // RFP form — real submission to Formspree
+  // RFP form, real submission to Formspree
   const rfpForm = document.getElementById('rfp-form');
   rfpForm.addEventListener('submit', async (e) => {
     e.preventDefault();

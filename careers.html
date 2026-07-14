@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers | Yemi Segun Ogundipe & Co</title>
+  <meta name="description" content="Join Yemi Segun Ogundipe & Co, a reputable indigenous Nigerian firm of Chartered Accountants. View open roles and submit your CV online." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon, navy chevron -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32%2C2 62%2C18 62%2C46 32%2C62 2%2C46 2%2C18' fill='%231a3a6b'/%3E%3Cpolygon points='32%2C12 52%2C24 52%2C40 32%2C52 12%2C40 12%2C24' fill='%230f2044'/%3E%3Ctext x='13' y='43' font-family='Georgia%2Cserif' font-style='italic' font-weight='700' font-size='21' fill='white'%3EYSO%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --navy:  #1a3a6b;
+      --navy2: #0f2044;
+      --navy3: #081530;
+      --gold:  #d4a843;
+      --ink:   #111827;
+      --light: #eef2fa;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: var(--ink); }
+
+    /* ── Logo ── */
+    .yso-logo { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+    .yso-mark { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .yso-wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .yso-wordmark-top { font-family: 'Playfair Display', Georgia, serif; font-size: 17px; font-weight: 700; color: #1a3a6b; letter-spacing: 0.01em; }
+    .yso-wordmark-sub { font-family: 'Inter', system-ui, sans-serif; font-size: 10px; font-weight: 500; color: #6b7280; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 3px; }
+    .yso-logo-light .yso-wordmark-top { color: #fff; }
+    .yso-logo-light .yso-wordmark-sub  { color: rgba(255,255,255,0.55); }
+
+    /* ── Nav ── */
+    #nav { transition: background 0.3s, box-shadow 0.3s; }
+    #nav.scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 1px 24px rgba(0,0,0,0.08); }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-block; background: var(--navy); color: #fff;
+      font-weight: 600; font-size: 15px; padding: 13px 30px;
+      border-radius: 8px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--navy2); transform: translateY(-1px); }
+    .btn-sm { padding: 9px 20px; font-size: 13px; }
+
+    /* ── Gold accent rule ── */
+    .gold-rule { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; }
+
+    /* ── Role card ── */
+    .role-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 28px 32px;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .role-card:hover { box-shadow: 0 8px 32px rgba(26,58,107,0.1); border-color: var(--navy); transform: translateY(-2px); }
+
+    /* ── Upload drop zone ── */
+    .drop-zone {
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      padding: 48px 24px;
+      text-align: center;
+      transition: border-color 0.2s, background 0.2s;
+      cursor: pointer;
+      position: relative;
+    }
+    .drop-zone.drag-over { border-color: var(--navy); background: var(--light); }
+    .drop-zone input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+
+    /* ── Progress bar ── */
+    .progress-bar { height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--navy); border-radius: 2px; transition: width 0.3s ease; }
+
+    /* ── Form input ── */
+    .form-input {
+      width: 100%; border: 1px solid #d1d5db; border-radius: 8px;
+      padding: 11px 15px; font-size: 15px; font-family: 'Inter', sans-serif;
+      background: #fff; transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .form-input:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(26,58,107,0.1); }
+    .form-label { display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px; }
+
+    /* ── Badge ── */
+    .badge-open     { background: #dbeafe; color: #1e40af; }
+    .badge-seasonal { background: #fef3c7; color: #92400e; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.04em; }
+
+    /* ── Mobile nav ── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* ── Alert ── */
+    .alert { border-radius: 8px; padding: 14px 18px; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; }
+    .alert-success { background: #dbeafe; color: #1e3a6e; border: 1px solid #93c5fd; }
+    .alert-error   { background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+    .alert-info    { background: #eef2fa; color: #1a3a6b; border: 1px solid #bfdbfe; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white border-b border-gray-100">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+
+    <a href="index.html" class="yso-logo">
+      <div class="yso-mark">
+        <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+          <polygon points="26,2 50,15 50,37 26,50 2,37 2,15" fill="#1a3a6b"/>
+          <polygon points="26,11 42,20 42,32 26,41 10,32 10,20" fill="#0f2044"/>
+          <text x="11" y="35" font-family="Georgia,serif" font-style="italic" font-weight="700" font-size="17" fill="white">YSO</text>
+        </svg>
+      </div>
+      <div class="yso-wordmark">
+        <span class="yso-wordmark-top">Yemi Segun Ogundipe</span>
+        <span class="yso-wordmark-sub">Chartered Accountants</span>
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-6">
+      <a href="index.html#about"    class="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors">About</a>
+      <a href="index.html#sectors"  class="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors">Sectors</a>
+      <a href="index.html#services" class="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors">Services</a>
+      <a href="index.html#insights" class="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors">Insights</a>
+      <a href="index.html#contact"  class="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors">Contact</a>
+      <a href="careers.html" class="text-sm font-semibold" style="color:var(--navy);">Careers</a>
+      <a href="index.html#rfp" class="btn-primary btn-sm">Submit RFP</a>
+    </div>
+
+    <button id="burger" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="2" y1="6" x2="20" y2="6"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="16" x2="20" y2="16"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 mt-4 rounded-xl shadow-lg">
+    <div class="flex flex-col p-4 gap-1">
+      <a href="index.html#about"    class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">About</a>
+      <a href="index.html#services" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Services</a>
+      <a href="index.html#contact"  class="px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Contact</a>
+      <a href="careers.html"        class="px-4 py-3 rounded-lg text-sm font-semibold" style="color:var(--navy);">Careers</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO BANNER
+════════════════════════════════════════ -->
+<section class="pt-32 pb-20 px-6" style="background:linear-gradient(135deg,#081530 0%,#0f2044 55%,#1a3a6b 100%);">
+  <div class="max-w-6xl mx-auto">
+    <div class="gold-rule mb-6"></div>
+    <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:rgba(212,168,67,0.85);">Join the Firm</p>
+    <h1 class="font-display text-4xl md:text-6xl font-bold text-white leading-tight mb-5">
+      Build a Career in<br/>
+      <span style="color:#d4a843;">Professional Practice.</span>
+    </h1>
+    <p class="text-lg text-white/70 max-w-2xl leading-relaxed mb-8">
+      Yemi Segun Ogundipe & Co is an indigenous Nigerian firm of Chartered Accountants offering careers in audit, tax, advisory, and IT consulting, where you work closely with experienced practitioners and serve real Nigerian businesses.
+    </p>
+    <a href="#open-roles" class="btn-primary">View Open Roles</a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     WHY JOIN YSO
+════════════════════════════════════════ -->
+<section class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="text-center px-4">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5" style="background:#eef2fa;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 9.61 19.79 19.79 0 01.09 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 6.91a16 16 0 006 6l.27-.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" transform="scale(0.85) translate(1.5,1.5)"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Direct Partner Access</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Work directly alongside Mr Yemi Ogundipe, a PwC-trained Chartered Accountant with 40+ years of practice experience. No corporate layers between you and the top.</p>
+      </div>
+
+      <div class="text-center px-4">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5" style="background:#eef2fa;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Cross-Sector Exposure</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Work across financial services, government agencies, oil & gas, NGOs, and technology firms, building broad sector knowledge that makes you a more complete professional.</p>
+      </div>
+
+      <div class="text-center px-4">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5" style="background:#eef2fa;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">ICAN-Aligned Development</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">We invest in your professional growth, supporting ICAN examination candidates, providing structured mentoring, and ensuring exposure to audit, tax, and consulting engagements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     OPEN ROLES
+════════════════════════════════════════ -->
+<section id="open-roles" class="py-20 px-6" style="background:#f8faff;">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-12">
+      <div class="gold-rule mb-5"></div>
+      <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Current Openings</p>
+      <h2 class="text-3xl md:text-4xl font-display font-semibold text-gray-900">Open Positions</h2>
+      <p class="text-gray-500 mt-3 max-w-xl">Click any role to expand details and apply. All applications are submitted directly to the firm's management.</p>
+    </div>
+
+    <div class="space-y-4" id="roles-list">
+
+      <!-- Role 1 -->
+      <div class="role-card" onclick="toggleRole('r1')">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2 flex-wrap">
+              <h3 class="text-lg font-semibold text-gray-900">Audit Associate</h3>
+              <span class="badge badge-open">Open</span>
+              <span class="text-xs text-gray-400 font-medium">Lagos · Full-time</span>
+            </div>
+            <p class="text-sm text-gray-500">ICAN graduate or final-level student. Experience with statutory audit preferred.</p>
+          </div>
+          <svg id="r1-arrow" class="flex-shrink-0 mt-1 transition-transform" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9ca3af" stroke-width="2">
+            <polyline points="5 8 10 13 15 8"/>
+          </svg>
+        </div>
+        <div id="r1" class="hidden mt-5 pt-5 border-t border-gray-100">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-3 text-sm">Responsibilities</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Assist in planning and executing statutory audit engagements</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Prepare audit working papers and documentation</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Perform substantive testing on financial statements</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Liaise with client staff during field work</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Support senior staff in preparing audit reports</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-3 text-sm">Requirements</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>ICAN finalist or newly qualified Chartered Accountant</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>B.Sc or HND in Accounting, Finance, or related field</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>1–2 years audit experience preferred (not mandatory)</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Proficiency in MS Excel and Word</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Strong attention to detail and analytical mindset</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-5">
+            <button onclick="openModal('Audit Associate'); event.stopPropagation();" class="btn-primary btn-sm">Apply for this Role</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role 2 -->
+      <div class="role-card" onclick="toggleRole('r2')">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2 flex-wrap">
+              <h3 class="text-lg font-semibold text-gray-900">Tax & Advisory Consultant</h3>
+              <span class="badge badge-open">Open</span>
+              <span class="text-xs text-gray-400 font-medium">Lagos · Full-time</span>
+            </div>
+            <p class="text-sm text-gray-500">3+ years Nigerian tax practice. Strong FIRS compliance and advisory background.</p>
+          </div>
+          <svg id="r2-arrow" class="flex-shrink-0 mt-1 transition-transform" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9ca3af" stroke-width="2">
+            <polyline points="5 8 10 13 15 8"/>
+          </svg>
+        </div>
+        <div id="r2" class="hidden mt-5 pt-5 border-t border-gray-100">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-3 text-sm">Responsibilities</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Handle corporate tax compliance filings (CIT, VAT, WHT, PAYE)</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Conduct tax health checks and compliance reviews</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Advise clients on Nigeria Tax Act changes</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Manage FIRS correspondence and audits</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Prepare tax advisory reports and client memoranda</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-3 text-sm">Requirements</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>ICAN / CITN qualified (or advanced finalist)</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Minimum 3 years Nigerian tax practice experience</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Strong working knowledge of FIRS requirements</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Familiarity with Nigeria Tax Act 2025 provisions</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Excellent written and verbal communication</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-5">
+            <button onclick="openModal('Tax & Advisory Consultant'); event.stopPropagation();" class="btn-primary btn-sm">Apply for this Role</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role 3 -->
+      <div class="role-card" onclick="toggleRole('r3')">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2 flex-wrap">
+              <h3 class="text-lg font-semibold text-gray-900">IT / ERP Consultant</h3>
+              <span class="badge badge-open">Open</span>
+              <span class="text-xs text-gray-400 font-medium">Lagos · Full-time</span>
+            </div>
+            <p class="text-sm text-gray-500">SAGE, Absalom or similar ERP experience. Database administration skills a strong advantage.</p>
+          </div>
+          <svg id="r3-arrow" class="flex-shrink-0 mt-1 transition-transform" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9ca3af" stroke-width="2">
+            <polyline points="5 8 10 13 15 8"/>
+          </svg>
+        </div>
+        <div id="r3" class="hidden mt-5 pt-5 border-t border-gray-100">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-3 text-sm">Responsibilities</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Implement and support SAGE 200/300 ERP installations</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Train client staff on accounting and ERP software</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Provide database administration and IT support</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Customise ERP modules to client-specific workflows</li>
+                <li class="flex gap-2"><span style="color:#d4a843;font-weight:700;">&#8226;</span>Liaise with international software partners (South Africa, Singapore)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-3 text-sm">Requirements</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>B.Sc Computer Science, IT, or related discipline</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Hands-on SAGE, Absalom, or equivalent ERP experience</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>SQL/database administration skills (preferred)</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Strong client-facing and communication skills</li>
+                <li class="flex gap-2"><span style="color:#1a3a6b;font-weight:700;">✓</span>Ability to travel within Lagos and nationally as needed</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-5">
+            <button onclick="openModal('IT / ERP Consultant'); event.stopPropagation();" class="btn-primary btn-sm">Apply for this Role</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role 4 - NYSC -->
+      <div class="role-card" onclick="toggleRole('r4')" style="opacity:0.8;">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2 flex-wrap">
+              <h3 class="text-lg font-semibold text-gray-900">NYSC / Internship</h3>
+              <span class="badge badge-seasonal">Seasonal</span>
+              <span class="text-xs text-gray-400 font-medium">Lagos · Rotation-based</span>
+            </div>
+            <p class="text-sm text-gray-500">We welcome Corps Members in accounting, finance, or IT for their place of primary assignment.</p>
+          </div>
+          <svg id="r4-arrow" class="flex-shrink-0 mt-1 transition-transform" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9ca3af" stroke-width="2">
+            <polyline points="5 8 10 13 15 8"/>
+          </svg>
+        </div>
+        <div id="r4" class="hidden mt-5 pt-5 border-t border-gray-100">
+          <p class="text-sm text-gray-600 mb-5">We welcome NYSC Corps Members with backgrounds in Accounting, Finance, Economics, Computer Science, or related disciplines. You'll rotate across audit, tax, and IT teams, gaining structured hands-on experience under the direct supervision of experienced professionals.</p>
+          <div class="alert alert-info mb-5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" flex-shrink-0><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span>Please have your NYSC call-up letter ready to upload alongside your CV when applying.</span>
+          </div>
+          <button onclick="openModal('NYSC / Internship'); event.stopPropagation();" class="btn-primary btn-sm">Submit Application</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- General application CTA -->
+    <div class="mt-10 rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style="background:#eef2fa;border:1px solid #bfdbfe;">
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-1">Don't see the right role?</h3>
+        <p class="text-sm text-gray-500">We're always happy to hear from talented professionals. Send us a speculative application and we'll keep your CV on file.</p>
+      </div>
+      <button onclick="openModal('General / Speculative Application')" class="btn-primary whitespace-nowrap">Apply Speculatively</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     APPLICATION MODAL
+════════════════════════════════════════ -->
+<div id="apply-modal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(8,21,48,0.7);backdrop-filter:blur(4px);overflow-y:auto;" onclick="if(event.target===this)closeModal()">
+  <div style="max-width:620px;margin:48px auto 48px;background:#fff;border-radius:16px;overflow:hidden;position:relative;">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#081530,#1a3a6b);padding:32px 36px 28px;">
+      <button onclick="closeModal()" style="position:absolute;top:16px;right:20px;background:rgba(255,255,255,0.15);border:none;cursor:pointer;color:#fff;font-size:18px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;" aria-label="Close">✕</button>
+      <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:rgba(212,168,67,0.85);">Application Form</p>
+      <h2 id="modal-title" class="font-display text-2xl font-semibold text-white">Applying for: Role</h2>
+      <p class="text-sm mt-2" style="color:rgba(255,255,255,0.6);">Yemi Segun Ogundipe & Co · Lagos, Nigeria</p>
+    </div>
+
+    <!-- Form body -->
+    <div style="padding:36px;">
+
+      <!--
+        CV UPLOAD SETUP NOTES (for production):
+        ─────────────────────────────────────────
+        This form uses Formspree for delivery. For file upload with Formspree:
+        1. Upgrade to Formspree Gold ($40/month) for file attachment support, OR
+        2. Use Formspree free tier: remove the file input and direct candidates
+           to attach CV to email instead (fallback mode below).
+
+        RECOMMENDED FREE ALTERNATIVE, Netlify Forms (if hosted on Netlify):
+        - Add netlify attribute to <form> tag
+        - Netlify supports file uploads natively for free
+        - Files stored in Netlify dashboard; email notification sent
+
+        RECOMMENDED FREE ALTERNATIVE, Web3Forms (web3forms.com):
+        - Free, supports file attachments up to 5MB
+        - Replace action URL with https://api.web3forms.com/submit
+        - Add <input type="hidden" name="access_key" value="YOUR_KEY">
+
+        FILE LIMITS ENFORCED CLIENT-SIDE:
+        - Max file size: 3MB (3,145,728 bytes), prevents storage bloat
+        - Accepted formats: PDF and DOC/DOCX only
+        - Validated in JS before submit, invalid files are rejected with clear message
+      -->
+
+      <form id="apply-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data" novalidate>
+
+        <!-- Hidden fields -->
+        <input type="hidden" name="_subject" id="form-subject" value="CV Application, YSO Careers" />
+        <input type="hidden" name="position" id="position-field" value="" />
+        <input type="text"   name="_gotcha"  style="display:none" tabindex="-1" autocomplete="off" />
+
+        <!-- Name row -->
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="form-label" for="app-fname">First Name <span style="color:#dc2626;">*</span></label>
+            <input class="form-input" type="text" id="app-fname" name="first_name" placeholder="Chukwuemeka" required />
+          </div>
+          <div>
+            <label class="form-label" for="app-lname">Last Name <span style="color:#dc2626;">*</span></label>
+            <input class="form-input" type="text" id="app-lname" name="last_name" placeholder="Adeyemi" required />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+          <label class="form-label" for="app-email">Email Address <span style="color:#dc2626;">*</span></label>
+          <input class="form-input" type="email" id="app-email" name="email" placeholder="you@email.com" required />
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-4">
+          <label class="form-label" for="app-phone">Phone Number <span style="color:#dc2626;">*</span></label>
+          <input class="form-input" type="tel" id="app-phone" name="phone" placeholder="+234 800 000 0000" required />
+        </div>
+
+        <!-- Qualification -->
+        <div class="mb-4">
+          <label class="form-label" for="app-qual">Highest Qualification <span style="color:#dc2626;">*</span></label>
+          <select class="form-input" id="app-qual" name="qualification" required>
+            <option value="">Select…</option>
+            <option>OND</option>
+            <option>HND</option>
+            <option>B.Sc / B.A</option>
+            <option>M.Sc / MBA</option>
+            <option>ICAN Finalist</option>
+            <option>ICAN Qualified (ACA)</option>
+            <option>ICAN Fellow (FCA)</option>
+            <option>CITN Member</option>
+            <option>Other Professional Qualification</option>
+          </select>
+        </div>
+
+        <!-- Years experience -->
+        <div class="mb-5">
+          <label class="form-label" for="app-exp">Years of Relevant Experience</label>
+          <select class="form-input" id="app-exp" name="years_experience">
+            <option value="">Select…</option>
+            <option>Fresh graduate / 0 years</option>
+            <option>Less than 1 year</option>
+            <option>1 – 2 years</option>
+            <option>3 – 5 years</option>
+            <option>6 – 10 years</option>
+            <option>More than 10 years</option>
+          </select>
+        </div>
+
+        <!-- Cover note -->
+        <div class="mb-5">
+          <label class="form-label" for="app-note">Cover Note <span style="color:#dc2626;">*</span></label>
+          <textarea class="form-input" id="app-note" name="cover_note" rows="3" placeholder="In 2–3 sentences, tell us why you're interested in this role and what you bring to YSO…" required></textarea>
+        </div>
+
+        <!-- CV Upload -->
+        <div class="mb-5">
+          <label class="form-label">Upload CV <span style="color:#dc2626;">*</span></label>
+
+          <div class="drop-zone" id="drop-zone" onclick="document.getElementById('cv-file').click()">
+            <input type="file" id="cv-file" name="cv" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" style="display:none" />
+            <svg class="mx-auto mb-3" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <p class="text-sm font-medium text-gray-700 mb-1">Click to upload your CV</p>
+            <p class="text-xs text-gray-400">PDF or Word document only · Maximum 3 MB</p>
+          </div>
+
+          <!-- File selected preview -->
+          <div id="file-preview" class="hidden mt-3 rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2 min-w-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a3a6b" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span id="file-name" class="text-sm font-medium text-gray-700 truncate"></span>
+              <span id="file-size" class="text-xs text-gray-400 flex-shrink-0"></span>
+            </div>
+            <button type="button" onclick="clearFile()" class="text-gray-400 hover:text-red-500 flex-shrink-0" aria-label="Remove file">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+
+          <!-- File validation error -->
+          <p id="file-error" class="hidden mt-2 text-xs font-medium" style="color:#dc2626;"></p>
+        </div>
+
+        <!-- Upload progress (shown during submission) -->
+        <div id="upload-progress" class="hidden mb-5">
+          <div class="flex justify-between text-xs text-gray-500 mb-1">
+            <span>Submitting application…</span>
+            <span id="progress-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+
+        <!-- Alerts -->
+        <div id="form-success" class="alert alert-success hidden mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" flex-shrink-0 style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div>
+            <p class="font-semibold">Application received!</p>
+            <p class="text-sm mt-0.5">Thank you for applying to YSO. We will review your CV and be in touch within 5–7 business days.</p>
+          </div>
+        </div>
+        <div id="form-error" class="alert alert-error hidden mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" flex-shrink-0 style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <div>
+            <p class="font-semibold">Submission failed</p>
+            <p class="text-sm mt-0.5">Please email your CV directly to <a href="mailto:yemi.ogundipe@linkoptionsng.com" class="underline">yemi.ogundipe@linkoptionsng.com</a> with the role title in the subject line.</p>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn-primary w-full text-center" style="font-size:15px;">
+          Submit Application
+        </button>
+        <p class="text-xs text-center text-gray-400 mt-3">Your information is treated with strict confidentiality and used only for recruitment purposes.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer style="background:#081530;color:rgba(255,255,255,0.7);">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+      <div class="yso-logo yso-logo-light">
+        <div class="yso-mark">
+          <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+            <polygon points="26,2 50,15 50,37 26,50 2,37 2,15" fill="#1a3a6b"/>
+            <polygon points="26,11 42,20 42,32 26,41 10,32 10,20" fill="#0f2044"/>
+            <text x="11" y="35" font-family="Georgia,serif" font-style="italic" font-weight="700" font-size="17" fill="white">YSO</text>
+          </svg>
+        </div>
+        <div class="yso-wordmark">
+          <span class="yso-wordmark-top">Yemi Segun Ogundipe & Co</span>
+          <span class="yso-wordmark-sub">Chartered Accountants</span>
+        </div>
+      </div>
+      <div class="text-sm space-y-1">
+        <p>45 Berkeley Street, Onikan, Lagos</p>
+        <p><a href="tel:+2348033081736" class="hover:text-white transition-colors">+234 803 308 1736</a></p>
+        <p><a href="mailto:yemi.ogundipe@linkoptionsng.com" class="hover:text-white transition-colors">yemi.ogundipe@linkoptionsng.com</a></p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
+        <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
+        <a href="careers.html" class="hover:text-white transition-colors font-semibold" style="color:#d4a843;">Careers</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:32px;padding-top:20px;">
+      <p class="text-xs" style="color:rgba(255,255,255,0.3);">© 2025 Yemi Segun Ogundipe & Co (Chartered Accountants). All rights reserved. Registered in Nigeria · CAMA Compliant · ICAN Members</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script>
+  // ── Nav scroll ──────────────────────────────────────────────────────────────
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // ── Mobile menu ─────────────────────────────────────────────────────────────
+  document.getElementById('burger').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+
+  // ── Role accordion ──────────────────────────────────────────────────────────
+  function toggleRole(id) {
+    const body  = document.getElementById(id);
+    const arrow = document.getElementById(id + '-arrow');
+    const isOpen = !body.classList.contains('hidden');
+    // Close all
+    ['r1','r2','r3','r4'].forEach(r => {
+      document.getElementById(r).classList.add('hidden');
+      document.getElementById(r + '-arrow').style.transform = '';
+    });
+    if (!isOpen) {
+      body.classList.remove('hidden');
+      arrow.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  // ── File validation ──────────────────────────────────────────────────────────
+  const MAX_SIZE = 3 * 1024 * 1024; // 3 MB, keeps storage lean
+  const ALLOWED  = ['application/pdf',
+                    'application/msword',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+  const ALLOWED_EXT = ['.pdf', '.doc', '.docx'];
+
+  const cvInput    = document.getElementById('cv-file');
+  const dropZone   = document.getElementById('drop-zone');
+  const preview    = document.getElementById('file-preview');
+  const fileName   = document.getElementById('file-name');
+  const fileSize   = document.getElementById('file-size');
+  const fileError  = document.getElementById('file-error');
+
+  function validateFile(file) {
+    if (!file) return 'Please select a file.';
+    const ext = '.' + file.name.split('.').pop().toLowerCase();
+    const validType = ALLOWED.includes(file.type) || ALLOWED_EXT.includes(ext);
+    if (!validType) return 'Only PDF and Word (.doc/.docx) files are accepted.';
+    if (file.size > MAX_SIZE) return `File is too large (${(file.size/1024/1024).toFixed(1)} MB). Maximum size is 3 MB.`;
+    return null;
+  }
+
+  function showFile(file) {
+    const err = validateFile(file);
+    if (err) {
+      fileError.textContent = err;
+      fileError.classList.remove('hidden');
+      preview.classList.add('hidden');
+      cvInput.value = '';
+      return false;
+    }
+    fileError.classList.add('hidden');
+    fileName.textContent = file.name;
+    fileSize.textContent = `(${(file.size / 1024).toFixed(0)} KB)`;
+    preview.classList.remove('hidden');
+    dropZone.style.display = 'none';
+    return true;
+  }
+
+  function clearFile() {
+    cvInput.value = '';
+    preview.classList.add('hidden');
+    dropZone.style.display = '';
+    fileError.classList.add('hidden');
+  }
+
+  cvInput.addEventListener('change', () => {
+    if (cvInput.files[0]) showFile(cvInput.files[0]);
+  });
+
+  // Drag-and-drop
+  dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', e => { dropZone.classList.remove('drag-over'); });
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer?.files[0];
+    if (file) {
+      // Transfer to input
+      const dt = new DataTransfer();
+      dt.items.add(file);
+      cvInput.files = dt.files;
+      showFile(file);
+    }
+  });
+
+  // ── Modal ───────────────────────────────────────────────────────────────────
+  let currentRole = '';
+
+  function openModal(roleName) {
+    currentRole = roleName;
+    document.getElementById('modal-title').textContent = 'Applying for: ' + roleName;
+    document.getElementById('position-field').value = roleName;
+    document.getElementById('form-subject').value = 'CV Application, ' + roleName + ', YSO';
+    document.getElementById('apply-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    // Reset form state
+    document.getElementById('apply-form').reset();
+    clearFile();
+    document.getElementById('form-success').classList.add('hidden');
+    document.getElementById('form-error').classList.add('hidden');
+    document.getElementById('submit-btn').style.display = '';
+    document.getElementById('upload-progress').classList.add('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('apply-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── Form submission ──────────────────────────────────────────────────────────
+  document.getElementById('apply-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const btn      = document.getElementById('submit-btn');
+    const progress = document.getElementById('upload-progress');
+    const fill     = document.getElementById('progress-fill');
+    const pct      = document.getElementById('progress-pct');
+    const success  = document.getElementById('form-success');
+    const errMsg   = document.getElementById('form-error');
+
+    // Validate file
+    const file = cvInput.files[0];
+    if (!file) {
+      fileError.textContent = 'Please upload your CV before submitting.';
+      fileError.classList.remove('hidden');
+      return;
+    }
+    const fileErr = validateFile(file);
+    if (fileErr) {
+      fileError.textContent = fileErr;
+      fileError.classList.remove('hidden');
+      return;
+    }
+
+    // Validate required fields
+    const required = ['app-fname','app-lname','app-email','app-phone','app-qual','app-note'];
+    let valid = true;
+    required.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) { el.style.borderColor = '#dc2626'; valid = false; }
+      else el.style.borderColor = '';
+    });
+    if (!valid) { return; }
+
+    // Submit
+    btn.style.display = 'none';
+    errMsg.classList.add('hidden');
+    progress.classList.remove('hidden');
+
+    // Animate progress bar (Formspree doesn't give real progress, so we simulate)
+    let p = 0;
+    const ticker = setInterval(() => {
+      p = Math.min(p + Math.random() * 12, 88);
+      fill.style.width = p + '%';
+      pct.textContent = Math.round(p) + '%';
+    }, 200);
+
+    try {
+      const formData = new FormData(this);
+      const res = await fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      clearInterval(ticker);
+      fill.style.width = '100%';
+      pct.textContent = '100%';
+
+      await new Promise(r => setTimeout(r, 300));
+      progress.classList.add('hidden');
+
+      if (res.ok) {
+        success.classList.remove('hidden');
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      clearInterval(ticker);
+      progress.classList.add('hidden');
+      btn.style.display = '';
+      errMsg.classList.remove('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>
